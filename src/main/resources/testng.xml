@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Talent Keeper Automation Test Suite">
+
+	<test name="Retentionworks Talent Keeper">
+		<classes>
+			<class name="com.ecomm.qa.testcases.LoginPageTest"></class>
+			<class name="com.ecomm.qa.testcases.FirstFitTest"></class>
+			<class name="com.ecomm.qa.testcases.TalentWatchGeneralTest"></class>
+		</classes>
+	</test>
+</suite>	 
