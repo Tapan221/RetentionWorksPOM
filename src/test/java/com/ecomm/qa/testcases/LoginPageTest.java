@@ -21,7 +21,7 @@ public class LoginPageTest extends TestBase {
 	
 	@BeforeMethod
 	public void init() throws IOException {
-		initilization();
+		TestBase.initilization();
 		 obj = new LoginPage();
 	}
 	
