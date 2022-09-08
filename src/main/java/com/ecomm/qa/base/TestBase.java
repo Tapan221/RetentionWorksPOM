@@ -42,6 +42,7 @@ public class TestBase {
 			options.addArguments("--disable-extensions"); // disabling extensions
 			options.addArguments("--disable-gpu"); // applicable to windows os only
 			options.addArguments("--no-sandbox"); // Bypass OS security model
+			options.addArguments("--remote-debugging-port=9222");
 			
 			driver = new ChromeDriver(options);
 		} else if (browserName.equals("firefox")) {
