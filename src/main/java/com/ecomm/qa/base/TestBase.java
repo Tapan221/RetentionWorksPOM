@@ -26,7 +26,7 @@ public class TestBase {
 	public static void initilization() throws IOException {
 		
 		prop = new Properties();
-		FileInputStream myFile = new FileInputStream("src\\main\\java\\com\\ecomm\\qa\\config\\config.properties");
+		FileInputStream myFile = new FileInputStream("src//main//java//com//ecomm//qa//config//config.properties");
 		prop.load(myFile);
 
 		String browserName = prop.getProperty("browser");
