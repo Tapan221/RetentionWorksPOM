@@ -25,7 +25,7 @@ public class TalentWatchGeneralTest extends TestBase {
 	
 	@BeforeClass
 	public void init() throws IOException, InterruptedException {
-		initilization();
+		TestBase.initilization();
 		 log = new LoginPage();
 		 talentWatch = new TalentWatchGeneral();
 		 log.login(prop.getProperty("username"), prop.getProperty("password"));

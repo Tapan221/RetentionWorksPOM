@@ -23,7 +23,7 @@ public class FirstFitTest extends TestBase{
 	
 	@BeforeClass
 	public void init() throws IOException, InterruptedException {
-		initilization();
+		TestBase.initilization();
 		 log = new LoginPage();
 		 home = new FirstFit();
 		 log.login(prop.getProperty("username"), prop.getProperty("password"));
