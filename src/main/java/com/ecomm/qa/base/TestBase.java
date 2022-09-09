@@ -31,23 +31,33 @@ public class TestBase {
 		prop.load(myFile);
 
 		String browserName = prop.getProperty("browser");
+		String env = prop.getProperty("env");
 		
 
 		if (browserName.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("headless","no-sandbox");
-			options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-			options.addArguments("start-maximized"); // open Browser in maximized mode
-			options.addArguments("disable-infobars"); // disabling infobars
-			options.addArguments("--disable-extensions"); // disabling extensions
-			options.addArguments("--disable-gpu"); // applicable to windows os only
-			 // Bypass OS security model
-			options.addArguments("--remote-debugging-port=9222");
-			options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
-			driver = new ChromeDriver(options);
-			
-			driver = new ChromeDriver(options);
+//			WebDriverManager.chromedriver().setup();
+//			ChromeOptions options = new ChromeOptions();
+//			options.addArguments("headless","no-sandbox");
+//			options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+//			options.addArguments("start-maximized"); // open Browser in maximized mode
+//			options.addArguments("disable-infobars"); // disabling infobars
+//			options.addArguments("--disable-extensions"); // disabling extensions
+//			options.addArguments("--disable-gpu"); // applicable to windows os only
+//			 // Bypass OS security model
+//			options.addArguments("--remote-debugging-port=9222");
+//			options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
+			 if(env.equals("local")) {
+				 WebDriverManager.chromedriver().setup();
+				 driver = new ChromeDriver();
+			 }
+			 else if(env.equals("aws")) {
+				 	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+			        ChromeOptions options = new ChromeOptions();
+			        options.addArguments("headless","no-sandbox");
+			        options.addArguments("disable-gpu");
+			        driver = new ChromeDriver(options);
+			 }
+		        
 		} else if (browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();

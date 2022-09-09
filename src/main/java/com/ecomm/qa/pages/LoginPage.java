@@ -23,7 +23,7 @@ public class LoginPage extends TestBase{
 
 	//How to initialize page factory
 
-	public LoginPage() throws IOException {
+	public LoginPage() {
 		PageFactory.initElements(driver, this);
 	}
 	
